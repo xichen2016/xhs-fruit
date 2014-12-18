@@ -1,0 +1,126 @@
+/**
+ * @package Helix Framework
+ * @author JoomShaper http://www.joomshaper.com
+ * @copyright Copyright (c) 20010 - 2013 JoomShaper
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
+*/
+
+#sp-menu {
+	margin-top:4px;
+        font-family: 'Lato', sans-serif;
+        font-weight:400;
+}
+
+/* Menu */
+
+.rtl{
+	.sp-submenu {
+		right:0;
+		//Submenu Parent
+		&.sub-level {
+			margin-top:30px;  //  30
+			&.open {
+				margin-top:0;
+				.transition(margin 200ms);
+			}
+		}
+		
+		//Submenu Children
+		&.sub-level-child {
+			margin-right:30px;  // 30
+			&.open {
+				margin-right:0px;
+				.transition(margin 200ms);
+			}
+		}		
+		.megacol {
+			float:left;
+		}	
+	}
+}
+
+.ltr{
+	.sp-submenu {
+		left:0;
+		
+		//Submenu Parent
+		&.sub-level {
+			margin-top:30px;  // 30
+			&.open {
+				margin-top:0;
+				.transition(margin 200ms);
+			}
+		}
+		
+		//Submenu Children
+		&.sub-level-child {
+			margin-left:30px;  // 30
+			&.open {
+				margin-left:0px;
+				.transition(margin 200ms);
+			}
+		}
+		
+		.megacol {
+			float:left;
+		}
+		
+	}
+}
+
+.sp-submenu {
+	position: absolute;
+	top:0;
+	z-index:0;
+	visibility:hidden;
+	opacity:0;
+	//display:none;
+	
+	.sp-submenu-wrap{
+		background:#fff;
+		.box-shadow(~"0 3px 8px rgba(0, 0, 0, 0.125)");
+		}
+	
+	&.open {
+		z-index:1;
+		
+		//display:block;
+		
+		visibility:visible;
+		opacity:1;
+
+	}
+}
+
+.sp-mobile-menu {
+	position:relative;
+	select{
+		&.select-menu {
+			width: 32px;
+			height: 27px;
+			opacity: 0;
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index:1;
+			cursor:pointer;
+		}
+	}
+}
+
+.f-sp-header-wrapper {
+  padding: 5px 0 !important;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  .transition(all 500ms);
+}
+
+.sp-main-menu-toggler {
+  left: auto;
+  right: 10px;
+  z-index: 99999 !important;
+  position: fixed;
+  top: 15px !important;
+}
